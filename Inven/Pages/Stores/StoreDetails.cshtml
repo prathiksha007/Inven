@@ -1,0 +1,14 @@
+﻿@page "{storeId:int}"
+@model Inven.Pages.Stores.StoreDetailsModel
+@{
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<h1>@Model.Store.StoreName</h1>
+<div>Location : @Model.Store.Location</div>
+<div>Store Type : @Model.Store.StoreType</div>
+
+<a asp-page="./StoreList" class="btn btn-default" >All Stores</a>
+<br />
+<a asp-page="./ProductList" class="btn btn-default"  asp-route-storeId="@Model.Store.Id" >Products</a>
+    

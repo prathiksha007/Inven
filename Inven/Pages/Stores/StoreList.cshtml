@@ -1,0 +1,39 @@
+﻿@page
+@model Inven.Pages.Stores.StoreListModel
+@{
+}
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<link rel="stylesheet" type="text/css" href="invenStylesheet.css">
+
+<h1>Stores</h1>
+<form method="get">
+    <div class="form-group">
+        <div class="inline">
+            <input type="search" class="form-control" value="" name="searchKey" placeholder="Search..." asp-for="SearchKey" style="width: 500px;" data-inline="true" />
+            <!-- <span class="input-group-btn">-->
+            <button class="btn btn-default" data-inline="true">
+                <i class="glyphicon glyphicon-search" data-inline="true"></i>
+            </button>
+            <button class="myButton" style="position: absolute; top: 150px; right: 50px"  asp-page="./CreateStore">Create Store</button>
+            <!-- </span> -->
+        </div>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>Store Name</th>
+        <th>Location</th>
+        <th>StoreType</th>
+    </tr>
+    @foreach (var store in Model.Stores)
+    {
+        <tr>
+            <td>
+                <a class="store-link" asp-page="./StoreDetails" asp-route-storeId="@store.Id">@store.StoreName</a>
+            </td>
+            <td>@store.Location</td>
+            <td>@store.StoreType</td>
+
+        </tr>
+    }
+</table>

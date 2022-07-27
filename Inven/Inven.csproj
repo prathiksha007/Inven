@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Inven.Core\Inven.Core.csproj" />
+    <ProjectReference Include="..\Inven.Data\Inven.Data.csproj" />
+  </ItemGroup>
+
+</Project>
